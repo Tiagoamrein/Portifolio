@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const InputArea= styled.textarea`
 
 background-color: rgb(226 232 240);
-width: 50%;
+width: 80%;
   height: 150px;
   margin-top: 5px;
   color: gray;

@@ -24,14 +24,14 @@ export default function Home(): JSX.Element {
    <div className='h-full w-full'>
     <Header/>
     <div className='flex items-center justify-around'>
-      <div className='w-60 text-lg'>
+      <div className='w-60 text-xs px-3'>
     <Typewriter
  onInit={(typewriter) => {
      typewriter.start()
          .typeString("Bem-vindo à nossa agência! Na THSC, nossa missão é transformar suas ideias em projetos reais e impactantes.")   
  }}
 /></div>
-    <Image src="/header.png" width="550" height="700" alt='Imagem de uma pessoa sentada mexendo em um notebook'/>
+    <Image src="/header.png" width="550" height="700" alt='Imagem de uma pessoa sentada mexendo em um notebook' sizes='(max-width: 768px) 30vw'/>
     </div>
 
 
@@ -89,11 +89,11 @@ export default function Home(): JSX.Element {
   
     </div>
 <div className=' text-center mt-10'>
-    <h2 className='text-center text-cyan-900 font-bold text-2xl '>Sobre</h2>
+    <h2 className=' text-cyan-900 font-bold text-2xl '>Sobre</h2>
 
-<p className='text-lg mt-10  text-zinc-500 font-semibold leading-8'>Na THSCsystem, estamos comprometidos em oferecer soluções inovadoras e personalizadas para atender às necessidades digitais dos nossos clientes. Fundada com a paixão por criar experiências excepcionais.Nossa missão é ir além das expectativas, transformando ideias em realidade através de um processo colaborativo e focado no cliente. Com uma abordagem centrada no usuário, buscamos não apenas atender, mas superar as metas e objetivos de cada projeto.
+<p className='text-ssm mt-5  text-zinc-500 font-semibold leading-2'>Na THSCsystem, estamos comprometidos em oferecer soluções inovadoras e personalizadas para atender às necessidades digitais dos nossos clientes. Fundada com a paixão por criar experiências excepcionais.Nossa missão é ir além das expectativas, transformando ideias em realidade através de um processo colaborativo e focado no cliente. Com uma abordagem centrada no usuário, buscamos não apenas atender, mas superar as metas e objetivos de cada projeto.
  Estamos entusiasmados em fazer parte da jornada de crescimento do seu negócio e em criar experiências digitais memoráveis que inspirem, envolvam e conquistem.
-  Junte-se a nós e vamos transformar sua visão em realidade.</p> 
+  Junte-se a nós e vamos trasformar sua visão em realidade.</p> 
   
   </div>
  
@@ -101,11 +101,11 @@ export default function Home(): JSX.Element {
   <div className='flex flex-row mb-2 mt-7 '>
   
     <div className='flex flex-col gap-1 px-2 w-6/12'>
-    <h2 className='text-cyan-900 font-bold  text-2xl'>Contato</h2>
+    <h2 className='text-cyan-900 font-bold  text-xl'>Contato</h2>
   <h1>Nome:</h1>
-  <input type="text" className='w-72 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none' />
+  <input type="text" className='w-36 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none' />
   <h1>Email:</h1>
-  <input type="text" className='w-72 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none'/>
+  <input type="text" className='w-36 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none'/>
   <h1>Mensagem:</h1>
  <InputArea/>
 
@@ -116,12 +116,12 @@ export default function Home(): JSX.Element {
       </div>
 <div className='flex flex-col gap-2'>
 
-<h2 className='text-cyan-900 font-bold text-2xl mb-5'>Redes Sociais</h2>
-<p className='flex items-center gap-2 text-cyan-900 font-bold text-lg'><FaEnvelope /> Meuemail@gmail.com</p>
-<button className='flex items-center gap-2 text-cyan-900 font-bold text-lg'><FaLinkedin />Linkedin</button>
-<button className='flex items-center gap-2 text-cyan-800 font-bold text-lg'> <FaInstagram/>Instagram</button>
-<button className='flex items-center gap-2 text-cyan-800 font-bold text-lg'><FaGithub />Github</button>
-<button className='flex items-center gap-2 text-cyan-800 font-bold text-lg'><FaWhatsapp />Whatsapp</button>
+<h2 className='text-cyan-900 font-bold text-xl mb-5'>Redes Sociais</h2>
+<p className='flex items-center gap-2 text-cyan-900 font-bold text-xs'><FaEnvelope /> Meuemail@gmail.com</p>
+<button className='flex items-center gap-2 text-cyan-900 font-bold text-xs'><FaLinkedin />Linkedin</button>
+<button className='flex items-center gap-2 text-cyan-800 font-bold text-xs'> <FaInstagram/>Instagram</button>
+<button className='flex items-center gap-2 text-cyan-800 font-bold text-xs'><FaGithub />Github</button>
+<button className='flex items-center gap-2 text-cyan-800 font-bold text-xs'><FaWhatsapp />Whatsapp</button>
 </div>
    </div>
    </div>
