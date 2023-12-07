@@ -10,6 +10,9 @@ import { FaLaptopCode,FaInstagram,FaGithub,FaLinkedin,FaWhatsapp, FaEnvelope } f
 import { LuSend } from "react-icons/lu";
 import { InputArea } from './styles';
 import { Projeto, projetos } from '@/components/projects/projetos';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { Element } from 'react-scroll';
 
 
 interface ProjectItemType {
@@ -19,6 +22,44 @@ interface ProjectItemType {
 };
 
 export default function Home(): JSX.Element {
+
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
+
+
   return (
     <main className='w-screen overflow-x-hidden flex gap-3'>
    <div className='h-full w-full'>
@@ -33,63 +74,64 @@ export default function Home(): JSX.Element {
 /></div>
     <Image src="/header.png" width="550" height="700" alt='Imagem de uma pessoa sentada mexendo em um notebook' sizes='(max-width: 768px) 30vw'/>
     </div>
+<Element name='soluções'>
+<h2 className='text-center text-cyan-900 font-bold text-2xl mb-5'>Soluções</h2> 
 
-
-    <div className='h-screen mt-9 ml-5 flex flex-col justify-center '>
-  <h2 className='text-center text-cyan-900 font-bold text-2xl mb-5'>Soluções</h2>
-  <div className='flex flex-wrap gap-4 mt-4'>
-    <div className='bg-slate-100 flex flex-col items-center justify-center text-cyan-700 rounded-xl p-4 max-w-md w-full sm:w-auto'>
+    
+  <div className='flex items-center px-4 mb-4'>
+  <Slider {...settings} className='w-full '>
+    
+    <div className='bg-slate-100 flex flex-col text-center items-center h-60 w-3/4 py-12 justify-center text-cyan-700 rounded-xl '>
       <IconContext.Provider value={{ color: 'rgb(181 196 199)', className: 'global-class-name' }}>
-        <FaLaptopCode className='w-28 h-28 m-auto' />
+        <FaLaptopCode className='w-16 h-11 m-auto' />
       </IconContext.Provider>
-      <h1 className='font-bold text-center mt-4'>Desenvolvimento fullStack</h1>
-      <p className='text-base text-cyan-700 mt-2 text-center mb-3'>
+      <h1 className='font-bold text-center text-sm'>Desenvolvimento fullStack</h1>
+      <p className='text-xs text-cyan-700 mt-2 text-center mb-3'>
         Desenvolvemos sites profissionais, blogs, portfólios, landing pages e-commerce.
       </p>
       <button className='bg-sky-700 cursor-pointer font-semibold text-slate-200 text-base px-3 py-1 rounded-lg  max-w-xs hover:bg-sky-800'>
         Contratar
       </button>
     </div>
-
-    <div className='bg-slate-100 flex flex-col items-center justify-center text-cyan-700 rounded-xl p-4 max-w-md w-full sm:w-auto'>
+    
+    <div className='bg-slate-100 flex flex-col text-center h-60 w-3/4 py-12 items-center  justify-center text-cyan-700 rounded-xl sm:ml-4'>
       <IconContext.Provider value={{ color: 'rgb(181 196 199)', className: 'global-class-name' }}>
-        <FaLaptopCode className='w-28 h-28 m-auto mt-5' />
+        <FaLaptopCode className='w-16 h-11 m-auto' />
       </IconContext.Provider>
-      <h1 className='font-bold text-center mt-4'>Design de UI/UX </h1>
-      <p className='text-base text-cyan-700 mt-2 text-center mb-3'>
+      <h1 className='font-bold text-center text-sm'>Design de UI/UX </h1>
+      <p className='text-xs text-cyan-700 mt-2 text-center mb-3'>
       Desenvolvemos experiências visuais e funcionais que se destacam, impulsionando o sucesso dos nossos clientes.
       </p>
       <button className='bg-sky-700 font-semibold text-slate-300 text-base px-3 py-1 rounded-lg  max-w-xs hover:bg-sky-800'>
         Contratar
       </button>
     </div>
-  </div>
+    </Slider>
 </div>
-
+</Element>
 
 
 <div className='mt-1'>
-    <h2 className='text-center text-cyan-900 font-bold text-2xl '>Projetos</h2>
-    <div className=' flex flex-wrap  gap-2 mt-8'>
-    
-    {projetos.map((projeto: Projeto, index: number) => (
-        <ProjectItem
-          key={index}
-          title={projeto.title}
-          image={projeto.image}
-          description={projeto.description}
-          link={projeto.link}
-        />
-      ))}
-   
-
-
+ <Element name='projetos'>   <h2 className='text-center text-cyan-900 font-bold text-2xl mt-10'>Projetos</h2></Element>
+  <div className='flex flex-row gap-5 mt-8'>
+      <Slider {...settings} className='w-full m-auto'>
+        {projetos.map((projeto, index) => (
+          <div key={index} className=' w-full p-12 min-[375px]:p-16'>
+            <ProjectItem
+              title={projeto.title}
+              image={projeto.image}
+              description={projeto.description}
+              link={projeto.link}
+            />
+          </div>
+        ))}
+      </Slider>
     </div>
 
   
     </div>
 <div className=' text-center mt-10'>
-    <h2 className=' text-cyan-900 font-bold text-2xl '>Sobre</h2>
+<Element name='sobre'>  <h2 className=' text-cyan-900 font-bold text-2xl '>Sobre</h2></Element>
 
 <p className='text-ssm mt-5  text-zinc-500 font-semibold leading-2'>Na THSCsystem, estamos comprometidos em oferecer soluções inovadoras e personalizadas para atender às necessidades digitais dos nossos clientes. Fundada com a paixão por criar experiências excepcionais.Nossa missão é ir além das expectativas, transformando ideias em realidade através de um processo colaborativo e focado no cliente. Com uma abordagem centrada no usuário, buscamos não apenas atender, mas superar as metas e objetivos de cada projeto.
  Estamos entusiasmados em fazer parte da jornada de crescimento do seu negócio e em criar experiências digitais memoráveis que inspirem, envolvam e conquistem.
@@ -97,11 +139,12 @@ export default function Home(): JSX.Element {
   
   </div>
  
- 
+  
   <div className='flex flex-row mb-2 mt-7 '>
   
     <div className='flex flex-col gap-1 px-2 w-6/12'>
-    <h2 className='text-cyan-900 font-bold  text-xl'>Contato</h2>
+      <Element name='contato'>
+    <h2 className='text-cyan-900 font-bold  text-xl'>Contato</h2></Element>
   <h1>Nome:</h1>
   <input type="text" className='w-36 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none' />
   <h1>Email:</h1>
