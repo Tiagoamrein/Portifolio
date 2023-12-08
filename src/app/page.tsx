@@ -94,7 +94,7 @@ export default function Home(): JSX.Element {
       </button>
     </div>
     
-    <div className='bg-slate-100 flex flex-col text-center h-60 w-3/4 py-12 items-center  justify-center text-cyan-700 rounded-xl sm:ml-4'>
+    <div className='bg-slate-100 flex flex-col ml-1 text-center h-60 w-3/4 py-12 items-center  justify-center text-cyan-700 rounded-xl sm:ml-4'>
       <IconContext.Provider value={{ color: 'rgb(181 196 199)', className: 'global-class-name' }}>
         <FaLaptopCode className='w-16 h-11 m-auto' />
       </IconContext.Provider>
