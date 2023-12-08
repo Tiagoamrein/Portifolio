@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Container, Content, Cover } from './styles'
 
+
 export interface projectProps {
   id?: string
   title?: string

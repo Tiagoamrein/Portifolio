@@ -6,7 +6,7 @@ export const Container = styled.div`
   max-width: 16.5rem;
   height: 16.5rem;
   margin-left: 10px;
-  background-color: #DCDCF6 ;
+  background-color: #f6f6ff ;
 
   border: none;
   border-radius: 8px;
@@ -23,6 +23,14 @@ export const Container = styled.div`
     width: 100%;
     min-width: 15.5rem;
     max-width: 16rem;
+    
+    /* height: auto;
+    min-height: 16.5rem; */
+  }
+  @media (min-width:1024px) {
+    width: 100%;
+    min-width: 20.5rem;
+    max-width: 21rem;
     
     /* height: auto;
     min-height: 16.5rem; */

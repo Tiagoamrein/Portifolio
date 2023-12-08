@@ -34,7 +34,7 @@ export default function Home(): JSX.Element {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 3,
           infinite: true,
           dots: true
@@ -65,7 +65,7 @@ export default function Home(): JSX.Element {
    <div className='h-full w-full'>
     <Header/>
     <div className='flex items-center justify-around'>
-      <div className='w-60 text-xs px-3'>
+      <div className='w-60 text-xs px-3 sm:text-lg'>
     <Typewriter
  onInit={(typewriter) => {
      typewriter.start()
@@ -81,11 +81,11 @@ export default function Home(): JSX.Element {
   <div className='flex items-center px-4 mb-4'>
   <Slider {...settings} className='w-full '>
     
-    <div className='bg-slate-100 flex flex-col text-center items-center h-60 w-3/4 py-12 justify-center text-cyan-700 rounded-xl '>
+    <div className='bg-slate-100 flex flex-col text-center items-center h-60 w-3/4 py-12 justify-center text-cyan-700 rounded-xl sm:max-w-md sm:w-full'>
       <IconContext.Provider value={{ color: 'rgb(181 196 199)', className: 'global-class-name' }}>
         <FaLaptopCode className='w-16 h-11 m-auto' />
       </IconContext.Provider>
-      <h1 className='font-bold text-center text-sm'>Desenvolvimento fullStack</h1>
+      <h1 className='font-bold text-center text-sm mt-3'>Desenvolvimento fullStack</h1>
       <p className='text-xs text-cyan-700 mt-2 text-center mb-3'>
         Desenvolvemos sites profissionais, blogs, portfólios, landing pages e-commerce.
       </p>
@@ -98,7 +98,7 @@ export default function Home(): JSX.Element {
       <IconContext.Provider value={{ color: 'rgb(181 196 199)', className: 'global-class-name' }}>
         <FaLaptopCode className='w-16 h-11 m-auto' />
       </IconContext.Provider>
-      <h1 className='font-bold text-center text-sm'>Design de UI/UX </h1>
+      <h1 className='font-bold text-center text-sm mt-3'>Design de UI/UX </h1>
       <p className='text-xs text-cyan-700 mt-2 text-center mb-3'>
       Desenvolvemos experiências visuais e funcionais que se destacam, impulsionando o sucesso dos nossos clientes.
       </p>
@@ -133,7 +133,7 @@ export default function Home(): JSX.Element {
 <div className=' text-center mt-10'>
 <Element name='sobre'>  <h2 className=' text-cyan-900 font-bold text-2xl '>Sobre</h2></Element>
 
-<p className='text-ssm mt-5  text-zinc-500 font-semibold leading-2'>Na THSCsystem, estamos comprometidos em oferecer soluções inovadoras e personalizadas para atender às necessidades digitais dos nossos clientes. Fundada com a paixão por criar experiências excepcionais.Nossa missão é ir além das expectativas, transformando ideias em realidade através de um processo colaborativo e focado no cliente. Com uma abordagem centrada no usuário, buscamos não apenas atender, mas superar as metas e objetivos de cada projeto.
+<p className='text-ssm mt-5 px-2  text-zinc-500 font-semibold leading-2 sm:text-lg sm:leading-8 sm:mt-10'>Na THSCsystem, estamos comprometidos em oferecer soluções inovadoras e personalizadas para atender às necessidades digitais dos nossos clientes. Fundada com a paixão por criar experiências excepcionais.Nossa missão é ir além das expectativas, transformando ideias em realidade através de um processo colaborativo e focado no cliente. Com uma abordagem centrada no usuário, buscamos não apenas atender, mas superar as metas e objetivos de cada projeto.
  Estamos entusiasmados em fazer parte da jornada de crescimento do seu negócio e em criar experiências digitais memoráveis que inspirem, envolvam e conquistem.
   Junte-se a nós e vamos trasformar sua visão em realidade.</p> 
   
@@ -160,11 +160,11 @@ export default function Home(): JSX.Element {
 <div className='flex flex-col gap-2'>
 
 <h2 className='text-cyan-900 font-bold text-xl mb-5'>Redes Sociais</h2>
-<p className='flex items-center gap-2 text-cyan-900 font-bold text-xs'><FaEnvelope /> Meuemail@gmail.com</p>
-<button className='flex items-center gap-2 text-cyan-900 font-bold text-xs'><FaLinkedin />Linkedin</button>
-<button className='flex items-center gap-2 text-cyan-800 font-bold text-xs'> <FaInstagram/>Instagram</button>
-<button className='flex items-center gap-2 text-cyan-800 font-bold text-xs'><FaGithub />Github</button>
-<button className='flex items-center gap-2 text-cyan-800 font-bold text-xs'><FaWhatsapp />Whatsapp</button>
+<p className='flex items-center gap-2 text-cyan-900 font-bold text-xs sm:text-base'><FaEnvelope /> Meuemail@gmail.com</p>
+<button className='flex items-center gap-2 text-cyan-900 font-bold text-xs sm:text-base'><FaLinkedin />Linkedin</button>
+<button className='flex items-center gap-2 text-cyan-800 font-bold text-xs sm:text-base'> <FaInstagram/>Instagram</button>
+<button className='flex items-center gap-2 text-cyan-800 font-bold text-xs sm:text-base'><FaGithub />Github</button>
+<button className='flex items-center gap-2 text-cyan-800 font-bold text-xs sm:text-base'><FaWhatsapp />Whatsapp</button>
 </div>
    </div>
    </div>
