@@ -13,6 +13,7 @@ import { Projeto, projetos } from '@/components/projects/projetos';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Element } from 'react-scroll';
+import ReactWhatsappButton from "react-whatsapp-button";
 
 
 interface ProjectItemType {
@@ -20,6 +21,8 @@ interface ProjectItemType {
   bannerLink: string;
   description: string;
 };
+
+
 
 export default function Home(): JSX.Element {
 
@@ -62,6 +65,11 @@ export default function Home(): JSX.Element {
 
   return (
     <main className='w-screen overflow-x-hidden flex gap-3'>
+      <ReactWhatsappButton
+        countryCode="55"
+        phoneNumber="54999887360"
+        animated
+      /> 
    <div className='h-full w-full'>
     <Header/>
     <div className='flex items-center justify-around'>
@@ -94,7 +102,7 @@ export default function Home(): JSX.Element {
       </button>
     </div>
     
-    <div className='bg-slate-100 flex flex-col ml-1 text-center h-60 w-3/4 py-12 items-center  justify-center text-cyan-700 rounded-xl sm:ml-4'>
+    <div className='bg-slate-100 flex flex-col ml-2 text-center h-60 w-3/4 py-12 items-center  justify-center text-cyan-700 rounded-xl sm:ml-4'>
       <IconContext.Provider value={{ color: 'rgb(181 196 199)', className: 'global-class-name' }}>
         <FaLaptopCode className='w-16 h-11 m-auto' />
       </IconContext.Provider>
