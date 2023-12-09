@@ -13,7 +13,8 @@ import { Projeto, projetos } from '@/components/projects/projetos';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Element } from 'react-scroll';
-import ReactWhatsappButton from "react-whatsapp-button";
+ 
+import ReactWhatsappButton from 'react-whatsapp-button';
 
 
 interface ProjectItemType {
@@ -69,7 +70,7 @@ export default function Home(): JSX.Element {
         countryCode="55"
         phoneNumber="54999887360"
         animated
-      /> 
+      />
    <div className='h-full w-full'>
     <Header/>
     <div className='flex items-center justify-around'>
@@ -172,7 +173,7 @@ export default function Home(): JSX.Element {
 <button className='flex items-center gap-2 text-cyan-900 font-bold text-xs sm:text-base'><FaLinkedin />Linkedin</button>
 <button className='flex items-center gap-2 text-cyan-800 font-bold text-xs sm:text-base'> <FaInstagram/>Instagram</button>
 <button className='flex items-center gap-2 text-cyan-800 font-bold text-xs sm:text-base'><FaGithub />Github</button>
-<button className='flex items-center gap-2 text-cyan-800 font-bold text-xs sm:text-base'><FaWhatsapp />Whatsapp</button>
+
 </div>
    </div>
    </div>
