@@ -2,30 +2,36 @@
 import Header from '@/components/header'
 import {ProjectItem} from '@/components/projects';
 import Image from 'next/image'
-import { useState } from 'react';
+
+import React, { useRef, useState } from 'react';
 import Typewriter from "typewriter-effect";
 import { IconContext } from "react-icons";
 import Slider from "react-slick";
+
 import { FaLaptopCode,FaInstagram,FaGithub,FaLinkedin,FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import { LuSend } from "react-icons/lu";
 import { InputArea } from './styles';
+
 import { Projeto, projetos } from '@/components/projects/projetos';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Element } from 'react-scroll';
- 
 import ReactWhatsappButton from 'react-whatsapp-button';
+import axios from 'axios';
+
+import emailjs from '@emailjs/browser';
 
 
-interface ProjectItemType {
+
+
+
+interface Props {
   title: string;
   bannerLink: string;
   description: string;
-};
+}
 
-
-
-export default function Home(): JSX.Element {
+export default function Home(){
 
   var settings = {
     dots: true,
@@ -62,8 +68,23 @@ export default function Home(): JSX.Element {
     ]
   };
 
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
 
+const form: any=useRef()
 
+var templateParams={
+  name: name,
+  message: message,
+  email: email
+}
+  const handleClick =(e:any) => {
+    e.preventDefault()
+    emailjs.sendForm("service_pwp2q34","template_oa2s4uk",form.current,"MFfReyUntlIQZmi18").then(()=> {console.log('funcionou')}).catch(console.error)
+
+    e.target.reset()
+  };
   return (
     <main className='w-screen overflow-x-hidden flex gap-3'>
       <ReactWhatsappButton
@@ -154,17 +175,18 @@ export default function Home(): JSX.Element {
     <div className='flex flex-col gap-1 px-2 w-6/12'>
       <Element name='contato'>
     <h2 className='text-cyan-900 font-bold  text-xl'>Contato</h2></Element>
+    <form ref={form} onSubmit={handleClick}>
   <h1>Nome:</h1>
-  <input type="text" className='w-36 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none' />
+  <input type="text" value={name}  name='user_name'  onChange={(e)=> setName(e.target.value)} className='w-36 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none' />
   <h1>Email:</h1>
-  <input type="text" className='w-36 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none'/>
+  <input type="text" value={email}   name='user_email' onChange={(e)=> setEmail(e.target.value)} className='w-36 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none'/>
   <h1>Mensagem:</h1>
- <InputArea/>
+ <InputArea value={message}  name='user_message'  onChange={(e)=> setMessage(e.target.value)}/>
 
- <button className='bg-sky-700 flex items-center justify-center gap-1 w-28 font-semibold text-slate-300 text-base px-1 py-1 rounded-lg hover:bg-sky-800'>
+ <button type='submit'  className='bg-sky-700 flex items-center justify-center gap-1 w-28 font-semibold text-slate-300 text-base px-1 py-1 rounded-lg hover:bg-sky-800'>
         Enviar <LuSend/>
       </button>
-
+      </form>
       </div>
 <div className='flex flex-col gap-2'>
 
