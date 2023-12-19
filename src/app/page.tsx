@@ -95,7 +95,7 @@ var templateParams={
    <div className='h-full w-full'>
     <Header/>
     <div className='flex items-center justify-around'>
-      <div className='w-60 text-xs px-3 sm:text-lg'>
+      <div className='w-60 text-xs px-3 sm:text-lg lg:text-xl lg:w-80'>
     <Typewriter
  onInit={(typewriter) => {
      typewriter.start()
@@ -105,13 +105,13 @@ var templateParams={
     <Image src="/header.png" width="550" height="700" alt='Imagem de uma pessoa sentada mexendo em um notebook' sizes='(max-width: 768px) 30vw'/>
     </div>
 <Element name='soluções'>
-<h2 className='text-center text-cyan-900 font-bold text-2xl mb-5'>Soluções</h2> 
+<h2 className='text-center text-cyan-900 font-bold text-2xl mb-9'>Soluções</h2> 
 
     
-  <div className='flex items-center px-4 mb-4'>
-  <Slider {...settings} className='w-full '>
+  <div className='flex w-full items-center mb-4'>
+  <Slider {...settings} className='w-screen '>
     
-    <div className='bg-slate-100 flex flex-col text-center items-center h-60 w-3/4 py-12 justify-center text-cyan-700 rounded-xl sm:max-w-md sm:w-full'>
+    <div className='bg-slate-100 flex flex-col text-center items-center h-60 w-1/2 py-12 justify-center text-cyan-700 rounded-xl '>
       <IconContext.Provider value={{ color: 'rgb(181 196 199)', className: 'global-class-name' }}>
         <FaLaptopCode className='w-16 h-11 m-auto' />
       </IconContext.Provider>
@@ -124,7 +124,7 @@ var templateParams={
       </button>
     </div>
     
-    <div className='bg-slate-100 flex flex-col ml-2 text-center h-60 w-3/4 py-12 items-center  justify-center text-cyan-700 rounded-xl sm:ml-4'>
+    <div className='bg-slate-100 flex flex-col  text-center ml-1 h-60 py-12 items-center  justify-center text-cyan-700 rounded-xl lg:ml-4 '>
       <IconContext.Provider value={{ color: 'rgb(181 196 199)', className: 'global-class-name' }}>
         <FaLaptopCode className='w-16 h-11 m-auto' />
       </IconContext.Provider>
@@ -143,10 +143,10 @@ var templateParams={
 
 <div className='mt-1'>
  <Element name='projetos'>   <h2 className='text-center text-cyan-900 font-bold text-2xl mt-10'>Projetos</h2></Element>
-  <div className='flex flex-row gap-5 mt-8'>
-      <Slider {...settings} className='w-full m-auto'>
+  <div className='flex flex-row'>
+      <Slider {...settings} className=' w-full flex'>
         {projetos.map((projeto, index) => (
-          <div key={index} className=' w-full p-12 min-[375px]:p-16'>
+          <div key={index} className=' p-12 min-[375px]:p-16'>
             <ProjectItem
               title={projeto.title}
               image={projeto.image}
@@ -163,7 +163,7 @@ var templateParams={
 <div className=' text-center mt-10'>
 <Element name='sobre'>  <h2 className=' text-cyan-900 font-bold text-2xl '>Sobre</h2></Element>
 
-<p className='text-ssm mt-5 px-2  text-zinc-500 font-semibold leading-2 sm:text-lg sm:leading-8 sm:mt-10'>Na THSCsystem, estamos comprometidos em oferecer soluções inovadoras e personalizadas para atender às necessidades digitais dos nossos clientes. Fundada com a paixão por criar experiências excepcionais.Nossa missão é ir além das expectativas, transformando ideias em realidade através de um processo colaborativo e focado no cliente. Com uma abordagem centrada no usuário, buscamos não apenas atender, mas superar as metas e objetivos de cada projeto.
+<p className='text-ssm mt-5 px-2  text-zinc-500 font-semibold leading-2 sm:text-lg sm:leading-8 sm:mt-10 lg:text-xl lg:w-10/12 lg:m-auto lg:mt-10'>Na THSCsystem, estamos comprometidos em oferecer soluções inovadoras e personalizadas para atender às necessidades digitais dos nossos clientes. Fundada com a paixão por criar experiências excepcionais.Nossa missão é ir além das expectativas, transformando ideias em realidade através de um processo colaborativo e focado no cliente. Com uma abordagem centrada no usuário, buscamos não apenas atender, mas superar as metas e objetivos de cada projeto.
  Estamos entusiasmados em fazer parte da jornada de crescimento do seu negócio e em criar experiências digitais memoráveis que inspirem, envolvam e conquistem.
   Junte-se a nós e vamos trasformar sua visão em realidade.</p> 
   
