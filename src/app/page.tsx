@@ -33,7 +33,50 @@ interface Props {
 
 export default function Home(){
 
-  var settings = {
+  var ProjectsSlider = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+       {
+        breakpoint: 1311,
+        settings: {
+          slidesToShow:3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+  var SoluctionsSlider = {
     dots: true,
     infinite: false,
     speed: 500,
@@ -109,7 +152,7 @@ var templateParams={
 
     
   <div className='flex w-full items-center mb-4'>
-  <Slider {...settings} className='w-screen '>
+  <Slider {...SoluctionsSlider} className='w-screen '>
     
     <div className='bg-slate-100 flex flex-col text-center items-center h-60 w-1/2 py-12 justify-center text-cyan-700 rounded-xl '>
       <IconContext.Provider value={{ color: 'rgb(181 196 199)', className: 'global-class-name' }}>
@@ -144,7 +187,7 @@ var templateParams={
 <div className='mt-1'>
  <Element name='projetos'>   <h2 className='text-center text-cyan-900 font-bold text-2xl mt-10'>Projetos</h2></Element>
   <div className='flex flex-row'>
-      <Slider {...settings} className=' w-full flex'>
+      <Slider {...ProjectsSlider} className=' w-full flex'>
         {projetos.map((projeto, index) => (
           <div key={index} className=' p-12 min-[375px]:p-16'>
             <ProjectItem
