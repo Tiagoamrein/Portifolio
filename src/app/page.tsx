@@ -37,12 +37,28 @@ export default function Home(){
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 4,
     initialSlide: 0,
     responsive: [
+      {
+        breakpoint: 2000,
+        settings: {
+          slidesToShow:4,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow:3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
        {
-        breakpoint: 1311,
+        breakpoint: 1318,
         settings: {
           slidesToShow:3,
           slidesToScroll: 3,
@@ -55,6 +71,15 @@ export default function Home(){
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
           infinite: true,
           dots: true
         }
@@ -88,7 +113,7 @@ export default function Home(){
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 3,
+          slidesToScroll: 2,
           infinite: true,
           dots: true
         }
@@ -215,7 +240,7 @@ var templateParams={
   
   <div className='flex flex-row mb-2 mt-7 '>
   
-    <div className='flex flex-col gap-1 px-2 w-6/12'>
+    <div className='flex flex-col gap-1 px-3 w-6/12'>
       <Element name='contato'>
     <h2 className='text-cyan-900 font-bold  text-xl'>Contato</h2></Element>
     <form ref={form} onSubmit={handleClick}>
