@@ -6,7 +6,7 @@ export default function Header(){
     
     <div className='flex justify-between items-center px-2 py-4 w-screen sm:px-4 '>
     <h1 className="text-xs font-bold min-[360px]:text-sm sm:text-2xl">THSCsystem</h1>
-    <div className='flex gap-1 justify-center text-ssm  sm:text-base gap-2'>
+    <div className='flex gap-1 justify-center text-ssm  sm:text-base'>
       
       <Link to='home' duration={500}><button className='hover:text-sky-900  rounded-lg'>Home</button></Link>
       <Link to='projetos'  duration={500}><button className='hover:text-sky-900  rounded-lg'>Projetos</button></Link>

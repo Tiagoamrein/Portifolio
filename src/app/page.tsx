@@ -228,26 +228,18 @@ var templateParams={
 
   
     </div>
-<div className=' text-center mt-10'>
-<Element name='sobre'>  <h2 className=' text-cyan-900 font-bold text-2xl '>Sobre</h2></Element>
-
-<p className='text-ssm mt-5 px-2  text-zinc-500 font-semibold leading-2 sm:text-lg sm:leading-8 sm:mt-10 lg:text-xl lg:w-10/12 lg:m-auto lg:mt-10'>Na THSCsystem, estamos comprometidos em oferecer soluções inovadoras e personalizadas para atender às necessidades digitais dos nossos clientes. Fundada com a paixão por criar experiências excepcionais.Nossa missão é ir além das expectativas, transformando ideias em realidade através de um processo colaborativo e focado no cliente. Com uma abordagem centrada no usuário, buscamos não apenas atender, mas superar as metas e objetivos de cada projeto.
- Estamos entusiasmados em fazer parte da jornada de crescimento do seu negócio e em criar experiências digitais memoráveis que inspirem, envolvam e conquistem.
-  Junte-se a nós e vamos trasformar sua visão em realidade.</p> 
-  
-  </div>
  
   
-  <div className='flex flex-row mb-2 mt-7 '>
+  <div className='flex flex-col mb-2 mt-7 '>
   
-    <div className='flex flex-col gap-1 px-3 w-6/12'>
+    <div className='flex flex-col text-cyan-900 justify-center gap-1 px-3 '>
       <Element name='contato'>
-    <h2 className='text-cyan-900 font-bold  text-xl'>Contato</h2></Element>
+    <h2 className=' font-bold  text-xl'>Contato</h2></Element>
     <form ref={form} onSubmit={handleClick}>
   <h1>Nome:</h1>
-  <input type="text" value={name}  name='user_name'  onChange={(e)=> setName(e.target.value)} className='w-36 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none' />
+  <input type="text"   name='user_name'  onChange={(e)=> setName(e.target.value)} className='w-52 border-none text-xs py-1 text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none' />
   <h1>Email:</h1>
-  <input type="text" value={email}   name='user_email' onChange={(e)=> setEmail(e.target.value)} className='w-36 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none'/>
+  <input type="text"    name='user_email' onChange={(e)=> setEmail(e.target.value)} className='w-52 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none'/>
   <h1>Mensagem:</h1>
  <InputArea value={message}  name='user_message'  onChange={(e)=> setMessage(e.target.value)}/>
 
@@ -256,16 +248,27 @@ var templateParams={
       </button>
       </form>
       </div>
-<div className='flex flex-col gap-2'>
 
-<h2 className='text-cyan-900 font-bold text-xl mb-5'>Redes Sociais</h2>
-<p className='flex items-center gap-2 text-cyan-900 font-bold text-xs sm:text-base'><FaEnvelope /> Meuemail@gmail.com</p>
-<button className='flex items-center gap-2 text-cyan-900 font-bold text-xs sm:text-base'><FaLinkedin />Linkedin</button>
-<button className='flex items-center gap-2 text-cyan-800 font-bold text-xs sm:text-base'> <FaInstagram/>Instagram</button>
-<button className='flex items-center gap-2 text-cyan-800 font-bold text-xs sm:text-base'><FaGithub />Github</button>
-
-</div>
    </div>
+   <footer className='bg-sky-700 text-slate-100 h-full'>
+   <div className=' text-center mt-10'>
+<Element name='sobre'>  <h2 className=' text-cyan-900 font-bold text-2xl '>Sobre</h2></Element>
+
+<p className='text-ssm mt-3 px-2  text-slate-300 font-semibold leading-2 sm:text-lg sm:leading-8  lg:text-xl lg:w-10/12 lg:m-auto'>Na THSCsystem, estamos comprometidos em oferecer soluções inovadoras e personalizadas para atender às necessidades digitais dos nossos clientes. Fundada com a paixão por criar experiências excepcionais.Nossa missão é ir além das expectativas, transformando ideias em realidade através de um processo colaborativo e focado no cliente. Com uma abordagem centrada no usuário, buscamos não apenas atender, mas superar as metas e objetivos de cada projeto.
+ Estamos entusiasmados em fazer parte da jornada de crescimento do seu negócio e em criar experiências digitais memoráveis que inspirem, envolvam e conquistem.
+  Junte-se a nós e vamos trasformar sua visão em realidade.</p> 
+  
+  </div>  
+   <div className='flex flex-col justify-center gap-2  items-center '>
+
+<h2 className='text-cyan-900 font-bold text-xl mt-3'>Redes Sociais</h2>
+<div className='flex w-full justify-evenly '>
+<p className='flex items-center gap-1 text-slate-300 font-bold text-xs sm:text-base'><FaEnvelope /> Meuemail@gmail.com</p>
+<button className='flex items-center gap-1 text-slate-300 font-bold text-xs sm:text-base'> <FaInstagram/>Instagram</button>
+</div>
+</div>
+   
+ </footer>
    </div>
    </main>
   
