@@ -15,7 +15,24 @@ const config: Config = {
       },
       fontSize:{
         ssm: '10px',
+      },
+
+      keyframes: {
+        focus:{
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(20rem)',
+        },
+        '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+        },
+        }
+      },
+      animation:{
+        'focus-up':'focus 0.2s linear'
       }
+
     },
   },
   plugins: [],

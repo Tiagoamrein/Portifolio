@@ -2,13 +2,15 @@
 import Header from '@/components/header'
 import {ProjectItem} from '@/components/projects';
 import Image from 'next/image'
+import { z } from 'zod';
 
 import React, { useRef, useState } from 'react';
 import Typewriter from "typewriter-effect";
 import { IconContext } from "react-icons";
 import Slider from "react-slick";
+import { useForm, } from 'react-hook-form';
 
-import { FaLaptopCode,FaInstagram,FaGithub,FaLinkedin,FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { FaLaptopCode,FaInstagram,FaEnvelope } from "react-icons/fa";
 import { LuSend } from "react-icons/lu";
 import { InputArea } from './styles';
 
@@ -17,13 +19,19 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Element } from 'react-scroll';
 import ReactWhatsappButton from 'react-whatsapp-button';
-import axios from 'axios';
+
 
 import emailjs from '@emailjs/browser';
+import { Toaster, toast } from 'sonner'
 
 
+const contactForm = z.object({
+  name: z.string(),
+  email: z.string().email(),
+  message: z.string()
+})
 
-
+type ContactForm= z.infer<typeof contactForm>
 
 interface Props {
   title: string;
@@ -39,6 +47,15 @@ export default function Home(){
     speed: 500,
     initialSlide: 0,
     responsive: [
+      {
+        breakpoint: 3000,
+        settings: {
+          slidesToShow:5,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: true
+        }
+      },
       {
         breakpoint: 2000,
         settings: {
@@ -141,20 +158,26 @@ export default function Home(){
   const [message, setMessage] = useState('')
 
 const form: any=useRef()
+const {register,handleSubmit, formState:{isSubmitting}} = useForm<ContactForm>()
 
 var templateParams={
   name: name,
   message: message,
   email: email
 }
-  const handleClick =(e:any) => {
-    e.preventDefault()
+  async function handleClick(data:ContactForm ) {
+    
+ console.log(data)
     emailjs.sendForm("service_pwp2q34","template_oa2s4uk",form.current,"MFfReyUntlIQZmi18").then(()=> {console.log('funcionou')}).catch(console.error)
 
-    e.target.reset()
+ await new Promise((resolve)=> setTimeout(resolve,2000))
+
+ toast.success('Obrigado! Sua mensagem de contato foi enviada.')
   };
   return (
+    
     <main className='w-screen overflow-x-hidden flex gap-3'>
+      <Toaster richColors/>
       <ReactWhatsappButton
         countryCode="55"
         phoneNumber="54999887360"
@@ -187,9 +210,9 @@ var templateParams={
       <p className='text-xs text-cyan-700 mt-2 text-center mb-3'>
         Desenvolvemos sites profissionais, blogs, portfólios, landing pages e-commerce.
       </p>
-      <button className='bg-sky-700 cursor-pointer font-semibold text-slate-200 text-base px-3 py-1 rounded-lg  max-w-xs hover:bg-sky-800'>
-        Contratar
-      </button>
+      <a href="https://api.whatsapp.com/send?phone=5554999887360" target='_blank' className='bg-sky-700 cursor-pointer font-semibold text-slate-200 text-base px-3 mt-4 py-1 rounded-lg max-w-xs hover:bg-sky-800'>
+  Contratar
+</a>
     </div>
     
     <div className='bg-slate-100 flex flex-col  text-center ml-1 h-60 py-12 items-center  justify-center text-cyan-700 rounded-xl lg:ml-4 '>
@@ -200,9 +223,9 @@ var templateParams={
       <p className='text-xs text-cyan-700 mt-2 text-center mb-3'>
       Desenvolvemos experiências visuais e funcionais que se destacam, impulsionando o sucesso dos nossos clientes.
       </p>
-      <button className='bg-sky-700 font-semibold text-slate-300 text-base px-3 py-1 rounded-lg  max-w-xs hover:bg-sky-800'>
-        Contratar
-      </button>
+      <a href="https://api.whatsapp.com/send?phone=5554999887360" target='_blank' className='bg-sky-700 cursor-pointer font-semibold text-slate-200 text-base px-3 mt-4 py-1 rounded-lg max-w-xs hover:bg-sky-800'>
+  Contratar
+</a>
     </div>
     </Slider>
 </div>
@@ -232,25 +255,25 @@ var templateParams={
   
   <div className='flex flex-col mb-2 mt-7 '>
   
-    <div className='flex flex-col text-cyan-900 justify-center gap-1 px-3 '>
+    <div className='flex flex-col text-cyan-900 justify-center gap-1 px-3 focus:animate-focus-up'>
       <Element name='contato'>
     <h2 className=' font-bold  text-xl'>Contato</h2></Element>
-    <form ref={form} onSubmit={handleClick}>
+    <form ref={form} onSubmit={handleSubmit(handleClick)}>
   <h1>Nome:</h1>
-  <input type="text"   name='user_name'  onChange={(e)=> setName(e.target.value)} className='w-52 border-none text-xs py-1 text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none' />
+  <input type="text" {...register('name')} required name='user_name'  onChange={(e)=> setName(e.target.value)} className='w-52 border-none text-xs py-1 text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none' />
   <h1>Email:</h1>
-  <input type="text"    name='user_email' onChange={(e)=> setEmail(e.target.value)} className='w-52 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none'/>
+  <input type="email" {...register("email")} required  name='user_email' onChange={(e)=> setEmail(e.target.value)} className='w-52 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none'/>
   <h1>Mensagem:</h1>
- <InputArea value={message}  name='user_message'  onChange={(e)=> setMessage(e.target.value)}/>
+ <InputArea {...register('message')}   name='user_message'  onChange={(e)=> setMessage(e.target.value)}/>
 
- <button type='submit'  className='bg-sky-700 flex items-center justify-center gap-1 w-28 font-semibold text-slate-300 text-base px-1 py-1 rounded-lg hover:bg-sky-800'>
+ <button disabled={isSubmitting}  className='bg-sky-700 flex items-center justify-center gap-1 w-28 font-semibold text-slate-300 text-base px-1 py-1 rounded-lg hover:bg-sky-800'>
         Enviar <LuSend/>
       </button>
       </form>
       </div>
 
    </div>
-   <footer className='bg-sky-700 text-slate-100 h-full'>
+   <footer className='bg-sky-700 text-slate-100 h-full 2xl:h-80 flex flex-col gap-7'>
    <div className=' text-center mt-10'>
 <Element name='sobre'>  <h2 className=' text-cyan-900 font-bold text-2xl '>Sobre</h2></Element>
 
