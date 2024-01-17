@@ -16,7 +16,7 @@ export const projetos: Projeto[] = [
   {
     image: '/Screenshot from 2024-01-16 21-07-44.png',
     title: 'THSC Links',
-    description: 'Links uteis para instagram',
+    description: 'Links úteis para potencializar seu Instagram!',
     link: 'https://tiagoamrein.github.io/THSCsystem/'
   },
   {
