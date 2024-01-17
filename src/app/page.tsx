@@ -50,8 +50,8 @@ export default function Home(){
       {
         breakpoint: 3000,
         settings: {
-          slidesToShow:5,
-          slidesToScroll: 4,
+          slidesToShow:4,
+          slidesToScroll: 3,
           infinite: true,
           dots: true
         }
@@ -59,7 +59,7 @@ export default function Home(){
       {
         breakpoint: 2000,
         settings: {
-          slidesToShow:4,
+          slidesToShow:3,
           slidesToScroll: 3,
           infinite: true,
           dots: true
@@ -202,12 +202,12 @@ var templateParams={
   <div className='flex w-full items-center mb-4'>
   <Slider {...SoluctionsSlider} className='w-screen '>
     
-    <div className='bg-slate-100 flex flex-col text-center items-center h-60 w-1/2 py-12 justify-center text-cyan-700 rounded-xl '>
+    <div className='bg-slate-100 flex flex-col text-center items-center h-60 w-7/12 py-12 justify-center text-cyan-700 rounded-xl '>
       <IconContext.Provider value={{ color: 'rgb(181 196 199)', className: 'global-class-name' }}>
         <FaLaptopCode className='w-16 h-11 m-auto' />
       </IconContext.Provider>
       <h1 className='font-bold text-center text-sm mt-3'>Desenvolvimento fullStack</h1>
-      <p className='text-xs text-cyan-700 mt-2 text-center mb-3'>
+      <p className='text-xs text-cyan-700 mt-2 text-center mb-3 '>
         Desenvolvemos sites profissionais, blogs, portfólios, landing pages e-commerce.
       </p>
       <a href="https://api.whatsapp.com/send?phone=5554999887360" target='_blank' className='bg-sky-700 cursor-pointer font-semibold text-slate-200 text-base px-3 mt-4 py-1 rounded-lg max-w-xs hover:bg-sky-800'>
@@ -262,7 +262,7 @@ var templateParams={
   <h1>Nome:</h1>
   <input type="text" {...register('name')} required name='user_name'  onChange={(e)=> setName(e.target.value)} className='w-52 border-none text-xs py-1 text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none' />
   <h1>Email:</h1>
-  <input type="email" {...register("email")} required  name='user_email' onChange={(e)=> setEmail(e.target.value)} className='w-52 border-none text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none'/>
+  <input type="email" {...register("email")} required  name='user_email' onChange={(e)=> setEmail(e.target.value)} className='w-52 border-none text-xs py-1 text-gray-400 bg-slate-200 rounded-lg px-2 focus:outline-none'/>
   <h1>Mensagem:</h1>
  <InputArea {...register('message')}   name='user_message'  onChange={(e)=> setMessage(e.target.value)}/>
 
@@ -277,7 +277,7 @@ var templateParams={
    <div className=' text-center mt-10'>
 <Element name='sobre'>  <h2 className=' text-cyan-900 font-bold text-2xl '>Sobre</h2></Element>
 
-<p className='text-ssm mt-3 px-2  text-slate-300 font-semibold leading-2 sm:text-lg sm:leading-8  lg:text-xl lg:w-10/12 lg:m-auto'>Na THSCsystem, estamos comprometidos em oferecer soluções inovadoras e personalizadas para atender às necessidades digitais dos nossos clientes. Fundada com a paixão por criar experiências excepcionais.Nossa missão é ir além das expectativas, transformando ideias em realidade através de um processo colaborativo e focado no cliente. Com uma abordagem centrada no usuário, buscamos não apenas atender, mas superar as metas e objetivos de cada projeto.
+<p className='text-ssm mt-3 px-2  text-slate-300 font-semibold leading-2 sm:text-lg sm:leading-8  lg:text-xl lg:w-10/12 lg:m-auto'>Na THSCsystem, estamos comprometidos em oferecer soluções inovadoras e personalizadas para atender às necessidades digitais dos nossos clientes. Fundada com a paixão por criar experiências excepcionais, nossa missão é ir além das expectativas, transformando ideias em realidade através de um processo colaborativo e focado no cliente. Com uma abordagem centrada no usuário, buscamos não apenas atender, mas superar as metas e objetivos de cada projeto.
  Estamos entusiasmados em fazer parte da jornada de crescimento do seu negócio e em criar experiências digitais memoráveis que inspirem, envolvam e conquistem.
   Junte-se a nós e vamos trasformar sua visão em realidade.</p> 
   

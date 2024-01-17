@@ -3,7 +3,7 @@ import { Open_Sans } from 'next/font/google'
 import './globals.css'
 
 const open_Sans = Open_Sans({ subsets: ['latin'],
-weight: ['700','500', '600' ]})
+weight: ['700','500', '600','800','400' ]})
 
 export const metadata: Metadata = {
   title: 'THSC SYSTEM',
