@@ -6,8 +6,8 @@ export default function Header(){
     
     <div className='flex justify-between items-center px-2 py-4 w-screen sm:px-4 '>
       <div className='flex gap-1 items-center'>
-    <h1 className="text-xs font-extrabold  min-[360px]:text-sm sm:text-2xl">THSC</h1>
-    <h1 className='text-xs font-medium  min-[360px]:text-sm sm:text-2xl'>SYSTEM</h1></div>
+    <h1 className="text-smm font-extrabold  min-[360px]:text-sm sm:text-2xl">THSC</h1>
+    <h1 className='text-smm font-medium  min-[360px]:text-sm sm:text-2xl'>SYSTEM</h1></div>
     <div className='flex gap-1 justify-center text-ssm  sm:text-base'>
       
       <Link to='home' duration={500}><button className='hover:text-sky-900  rounded-lg'>Home</button></Link>

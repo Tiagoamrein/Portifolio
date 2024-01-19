@@ -15,6 +15,7 @@ const config: Config = {
       },
       fontSize:{
         ssm: '10px',
+        smm:'5px'
       },
 
       keyframes: {

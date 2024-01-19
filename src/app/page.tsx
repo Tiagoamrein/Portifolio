@@ -286,8 +286,9 @@ var templateParams={
 
 <h2 className='text-cyan-900 font-bold text-xl mt-3'>Redes Sociais</h2>
 <div className='flex w-full justify-evenly '>
-<p className='flex items-center gap-1 text-slate-300 font-bold text-xs sm:text-base'><FaEnvelope /> Meuemail@gmail.com</p>
-<button className='flex items-center gap-1 text-slate-300 font-bold text-xs sm:text-base'> <FaInstagram/>Instagram</button>
+<p className='flex items-center gap-1 text-slate-300 font-bold text-xs sm:text-base'><FaEnvelope /> thscsystem@gmail.com</p>
+<a href="https://www.instagram.com/thsc.system/" target="_blank" rel="noopener noreferrer">
+<button className='flex items-center gap-1 text-slate-300 font-bold text-xs sm:text-base'> <FaInstagram/>Instagram</button></a>
 </div>
 </div>
    

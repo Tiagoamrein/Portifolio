@@ -17,7 +17,7 @@ export const projetos: Projeto[] = [
     image: '/Screenshot from 2024-01-16 21-07-44.png',
     title: 'THSC Links',
     description: 'Links úteis para potencializar seu Instagram!',
-    link: 'https://tiagoamrein.github.io/THSCsystem/'
+    link: 'https://thsclinks.netlify.app/'
   },
   {
     image: '/204163350-1d4c8a96-f68a-4eb0-aa8e-5343e2681749.png',
